@@ -81,7 +81,7 @@ export function HeroSection() {
               <div className={`text-lg text-indigo-600 transform transition-all duration-700 delay-300 ${
                 isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
               }`}>
-                👋 Salut, je suis
+                👋 Bonjour/Bonsoir, je suis
               </div>
               <h1 className={`text-5xl lg:text-6xl text-indigo-900 leading-tight transform transition-all duration-700 delay-500 ${
                 isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
