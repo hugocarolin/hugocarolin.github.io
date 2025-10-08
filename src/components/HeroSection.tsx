@@ -50,7 +50,7 @@ export function HeroSection() {
   };
 
   return (
-    <section id="accueil" className="min-h-screen bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50 flex items-center justify-center px-4 relative overflow-hidden">
+    <section id="accueil" className="min-h-screen bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50 flex items-center justify-center px-4 relative overflow-hidden py-20 sm:py-32 lg:py-40">
       {/* Particules flottantes en arrière-plan */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(30)].map((_, i) => (
@@ -75,7 +75,7 @@ export function HeroSection() {
         {/* Contenu texte */}
         <div className={`space-y-8 transform transition-all duration-1000 ease-out ${
           isVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'
-        }`}>
+          }`}>
           <div className="space-y-6">
             <div className="space-y-2">
               <div className={`text-lg text-indigo-600 transform transition-all duration-700 delay-300 ${
@@ -126,7 +126,7 @@ export function HeroSection() {
         </div>
 
         {/* Animation/Illustration */}
-        <div className={`relative transform transition-all duration-1000 ease-out delay-300 ${
+      <div className={`relative transform transition-all duration-1000 ease-out delay-300 ${
           isVisible ? 'translate-x-0 opacity-100' : 'translate-x-12 opacity-0'
         }`}>
           <div className="relative w-full h-96 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-3xl overflow-hidden shadow-2xl group">
@@ -168,17 +168,21 @@ export function HeroSection() {
       </div>
 
       {/* Indicateur de scroll */}
-      <div className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-all duration-1000 delay-1500 ${
-        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-      }`}>
-        <button 
+      <div
+        className={`w-full absolute left-0 flex justify-center transition-all duration-1000 delay-1500 ${
+          isVisible ? "translate-y-2 opacity-100" : "translate-y-6 opacity-0"
+        } bottom-8 sm:bottom-10 md:bottom-12 lg:bottom-16`}
+        style={{ zIndex: 5 }}
+      >
+        <button
           onClick={scrollToServices}
-          className="group flex flex-col items-center text-indigo-600 hover:text-indigo-800 transition-colors duration-300"
+          className="group flex flex-col items-center text-indigo-600 hover:text-indigo-800 transition-colors duration-300 pt-4"
         >
           <span className="text-sm mb-2 opacity-70">Découvrir</span>
           <ArrowDown className="w-5 h-5 animate-bounce group-hover:animate-pulse" />
         </button>
       </div>
+
 
       <style>{`
         @keyframes float {
