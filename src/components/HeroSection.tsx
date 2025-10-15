@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Button } from "./ui/button";
 import { Code, Sparkles, Layers3, ArrowDown } from 'lucide-react';
 
@@ -41,6 +41,18 @@ export function HeroSection() {
     return () => clearTimeout(timeout);
   }, [typedText, isDeleting, currentWordIndex, words]);
 
+  const particles = useMemo(() => {
+    return Array.from({ length: 30 }, (_, i) => ({
+      id: i,
+      left: `${Math.random() * 100}%`,
+      top: `${Math.random() * 100}%`,
+      delay: `${Math.random() * 5}s`,
+      duration: `${3 + Math.random() * 4}s`,
+      color:
+        i % 3 === 0 ? "bg-indigo-400" : i % 3 === 1 ? "bg-purple-400" : "bg-blue-400",
+    }))
+  }, [])
+
   const scrollToContact = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -53,23 +65,21 @@ export function HeroSection() {
     <section id="accueil" className="min-h-screen bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50 flex items-center justify-center px-4 relative overflow-hidden py-20 sm:py-32 lg:py-40">
       {/* Particules flottantes en arrière-plan */}
       <div className="absolute inset-0 pointer-events-none">
-        {[...Array(30)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute animate-float"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${3 + Math.random() * 4}s`
-            }}
-          >
-            <div className={`w-2 h-2 rounded-full opacity-30 ${
-              i % 3 === 0 ? 'bg-indigo-400' : i % 3 === 1 ? 'bg-purple-400' : 'bg-blue-400'
-            }`}></div>
-          </div>
-        ))}
-      </div>
+      {particles.map((p) => (
+        <div
+          key={p.id}
+          className="absolute animate-float"
+          style={{
+            left: p.left,
+            top: p.top,
+            animationDelay: p.delay,
+            animationDuration: p.duration,
+          }}
+        >
+          <div className={`w-2 h-2 rounded-full opacity-30 ${p.color}`} />
+        </div>
+      ))}
+    </div>
 
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
         {/* Contenu texte */}
