@@ -78,6 +78,7 @@ export function Navigation() {
           {/* Menu mobile */}
           <button
             onClick={() => setIsOpen(!isOpen)}
+            aria-label='Découvrir mes services'
             className="md:hidden text-indigo-900 hover:text-indigo-600 transition-colors duration-200"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

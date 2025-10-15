@@ -94,6 +94,7 @@ export function HeroSection() {
                 <span className="text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text">
                   {typedText}
                 </span>
+                <span className="border-r-2 border-indigo-600 animate-pulse ml-1">&nbsp;</span>
               </div>
             </div>
             
