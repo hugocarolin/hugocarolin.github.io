@@ -124,7 +124,7 @@ export function ContactSection() {
           {/* Bottom CTA */}
           <div className="text-center mt-12">
             <a 
-              href="mailto:hugo.carolin@epitech.eu"
+              href="mailto:hugo.carolin04@gmail.com"
               className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
             >
               <Mail className="w-5 h-5" />
