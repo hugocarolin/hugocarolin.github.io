@@ -35,16 +35,16 @@ export function ContactSection() {
                 
                 <div className="space-y-4">
                   <a 
-                    href="mailto:contact@hugocarolin.com"
+                    href="mailto:hugo.carolin04@gmail.com"
                     className="flex items-center text-indigo-700 hover:text-indigo-900 transition-colors group"
                   >
                     <div className="w-10 h-10 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-lg flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
                       <Mail className="w-5 h-5 text-indigo-600" />
                     </div>
-                    <span>hugo.carolin@epitech.eu</span>
+                    <span>hugo.carolin04@gmail.com</span>
                   </a>
                   
-                  <a 
+                  <a
                     href="tel:+262692472745"
                     className="flex items-center text-indigo-700 hover:text-indigo-900 transition-colors group"
                   >
@@ -54,12 +54,12 @@ export function ContactSection() {
                     <span>+262 6 92 47 27 45</span>
                   </a>
                   
-                  <div className="flex items-center text-indigo-700">
+                  {/* <div className="flex items-center text-indigo-700">
                     <div className="w-10 h-10 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-lg flex items-center justify-center mr-4">
                       <MapPin className="w-5 h-5 text-indigo-600" />
                     </div>
-                    <span>Paris, France</span>
-                  </div>
+                    <span></span>
+                  </div> */}
                 </div>
               </CardContent>
             </Card>
